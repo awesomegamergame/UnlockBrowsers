@@ -1,0 +1,8 @@
+C:\Users\8x.cp\source\repos\UnlockBrowsers\bin\Debug\UnlockBrowsers.exe.config
+C:\Users\8x.cp\source\repos\UnlockBrowsers\bin\Debug\UnlockBrowsers.exe
+C:\Users\8x.cp\source\repos\UnlockBrowsers\bin\Debug\UnlockBrowsers.pdb
+C:\Users\8x.cp\source\repos\UnlockBrowsers\obj\Debug\UnlockBrowsers.csproj.AssemblyReference.cache
+C:\Users\8x.cp\source\repos\UnlockBrowsers\obj\Debug\UnlockBrowsers.csproj.SuggestedBindingRedirects.cache
+C:\Users\8x.cp\source\repos\UnlockBrowsers\obj\Debug\UnlockBrowsers.csproj.CoreCompileInputs.cache
+C:\Users\8x.cp\source\repos\UnlockBrowsers\obj\Debug\UnlockBrowsers.exe
+C:\Users\8x.cp\source\repos\UnlockBrowsers\obj\Debug\UnlockBrowsers.pdb
