@@ -32,25 +32,34 @@ namespace UnlockBrowsers
 
         static void FixFolderPerms(string folderPath)
         {
-            // Get the current access control list for the folder
-            DirectoryInfo di = new DirectoryInfo(folderPath);
-            DirectorySecurity ds = di.GetAccessControl();
-
-            // Get the list of access control entries for the folder
-            AuthorizationRuleCollection acl = ds.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
-
-            // Loop through the ACEs and remove any that have the "Deny" flag set
-            foreach (FileSystemAccessRule ace in acl)
+            try
             {
-                if (ace.AccessControlType == AccessControlType.Deny)
-                {
-                    // Remove the ACE from the access control list
-                    ds.RemoveAccessRule(ace);
-                }
-            }
+                // Get the current access control list for the folder
+                DirectoryInfo di = new DirectoryInfo(folderPath);
+                DirectorySecurity ds = di.GetAccessControl();
 
-            // Apply the modified access control list to the folder
-            di.SetAccessControl(ds);
+                // Get the list of access control entries for the folder
+                AuthorizationRuleCollection acl = ds.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
+
+                // Loop through the ACEs and remove any that have the "Deny" flag set
+                foreach (FileSystemAccessRule ace in acl)
+                {
+                    if (ace.AccessControlType == AccessControlType.Deny)
+                    {
+                        // Remove the ACE from the access control list
+                        ds.RemoveAccessRule(ace);
+                    }
+                }
+
+                // Apply the modified access control list to the folder
+                di.SetAccessControl(ds);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"We got a problem: Exception:{ex}");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
         }
 
         static void GetExtrator()
